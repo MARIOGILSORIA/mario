@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    parameters {
+        string(name:'APELLIDO', description:'Ingrese su apellido')
+        text(name:'BIOGRAFIA', description:'Cuéntame algo sobre ti')
+        booleanParam(name:'BOOLEANO', description:'Parámetro booleano')
+        choice(name:'AMOR', choices:['Me quieres', 'Me quieres mucho'], description:'Nivel de amor hacia Mario')
+        password(name:'CONTRASEÑA', description:'Ingrese su contraseña')
+        
+    }
+        stage('Valor del parametro') {
+            steps {
+                echo "$APELLIDO"
+                echo "$BIOGRAFIA"
+                echo "$BOOLEANO"
+                echo "$AMOR"
+                echo "$CONTRASEÑA"
+            }
+        }
+    }
+}
+
+
+
+
